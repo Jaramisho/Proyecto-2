@@ -1,7 +1,5 @@
 import { Schema, model } from "module";
 
-//const mongoose = require('mongoose'); 
-
 const productoEsquema = new Schema (
   {
     nombre: {
