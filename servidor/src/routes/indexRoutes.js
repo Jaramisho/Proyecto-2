@@ -1,5 +1,8 @@
 import { Router } from "express";
-import productos from '../models/productos';
+//import productos from "../models/productos";
+
+
+import { productos } from "../models/productos";
 
 
 const router = Router();
@@ -8,10 +11,12 @@ const router = Router();
     res.render("index");
   });
 
-  router.post("/productos/agregar", (req, res) =>{
+  router.post("/productos/agregar", async (req, res) =>{
+    
     const productos = productos(req.body);
+    const productosAlmacenado = await productos.save();
     console.log(productos);
-    res.send("Almacenado");
+    res.send("productosAlmacenado");
   });
   
   router.get("/update", (req, res) => {

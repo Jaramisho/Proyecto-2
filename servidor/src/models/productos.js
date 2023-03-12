@@ -1,6 +1,10 @@
-import { Schema, model } from "module";
+import { Schema, model } from "mongoose";
 
-const productoEsquema = new Schema (
+const mongoose = require("mongoose");
+
+//const Schema = mongoose.Schema;
+
+const productoEsquema = new Schema(
   {
     nombre: {
       type: String,
@@ -27,8 +31,8 @@ const productoEsquema = new Schema (
   }
 );
 
+//const model = mongoose.model("productos", productoEsquema);
+
 export default model("productos", productoEsquema);
 
-//export default mongoose.model('productos', productoEsquema);
-
-//var User= mongoose.model('user', UserSchema);
+//module.exports = model;
