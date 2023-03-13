@@ -1,5 +1,5 @@
+import { Module } from "module";
 import { Schema, model } from "mongoose";
-
 const mongoose = require("mongoose");
 
 //const Schema = mongoose.Schema;
@@ -33,6 +33,7 @@ const productoEsquema = new Schema(
 
 //const model = mongoose.model("productos", productoEsquema);
 
-export default model("productos", productoEsquema);
+//export default model("productos", productoEsquema);
 
-//module.exports = model;
+module.exports = mongoose.model('productos', productoEsquema);
+
