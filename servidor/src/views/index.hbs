@@ -1,4 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/yourStyles.css">
+    <title>You title</title>
+</head>
+<body>
+    {{!-- <form action="/productos/agregar" method="POST">
+    <div>
+        <label for="nombre">Escribe Nombre De Producto</label>
+        <input type="text"  name="nombre" placeholder="name" id="nombre"/>
+    </div>
+    <select class="form-select" aria-label="Default select example" type="text"  name="seccion" placeholder="seccion" id="seccion">
+		<option selected>Open this select menu</option>
+		<option value="1">One</option>
+		<option value="2">Two</option>
+		<option value="3">Three</option>
+	  </select>
+        <button>Agregar</button>    
+
+</form> --}}
+    <form action="/semestre" class="my-form">
+    <div>
+        <label for="nombre">Escribe Nombre De Producto</label>
+        <input type="text"  name="nombre" placeholder="name" id="nombre"/>
+        <button type="submit" >Agregar</button>
+    </div>
+</form>
+<script>
+    (function($){
+        $("body").on("submit", ".my-form", function(e){
+            debugger
+            e.preventDefault();
+            var form = $(e.target);
+            $.get( form.attr("action"), form.serialize(), function(res){
+                console.log(res);
+            });
+        });
+    )(jQuery);
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
 <h1>Prueba de Proyecto</h1>
+
 <form action="/productos/agregar" method="POST">
     <div>
         <label for="nombre">Escribe Nombre De Producto</label>
@@ -16,4 +66,29 @@
         <button>Agregar</button>
 
 </form>
+Crear semestre
+<form action="/semestre" method="POST">
+    <div>
+        <label for="nombre">Nivel</label>
+        <input type="text"  name="nombre" placeholder="name" id="nombre"/>
+    </div>
+
+        <button>Agregar Semestre</button>
+
+</form>
+Crear materia
+<form action="/materia" method="POST">
+    <div>
+        <label for="nombre">Nombre</label>
+        <input type="text"  name="nombre" placeholder="name" id="nombre"/>
+    </div>
+     <div>
+        <label for="nombre">SemestreID</label>
+        <input type="text"  name="semestre" placeholder="semestre" id="semestre"/>
+    </div>
+
+        <button>Agregar Materia</button>
+
+</form>
+
 
